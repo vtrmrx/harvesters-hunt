@@ -1,0 +1,29 @@
+{
+    "requireConfirmation": false,
+    "fields": [
+        {
+            "id": "hasPlayedBefore",
+            "type": "radio-button",
+            "description": {
+                "pt": "Você já jogou esse jogo?",
+                "en": "Have you played this game before?"
+            },
+            "options": [
+                {
+                    "value": "yes",
+                    "label": {
+                        "pt": "Sim",
+                        "en": "Yes"
+                    }
+                },
+                {
+                    "value": "no",
+                    "label": {
+                        "pt": "Não",
+                        "en": "No"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,501 @@
+:root {
+    --game-identity-color: hsl(160 40% 20% / 1);
+    --game-highlight-color-1: hsl(100, 100%, 50%);
+    --game-highlight-color-2: hsl(100deg 100% 40%);
+    --game-highlight-color-2-transparent: hsl(100deg 100% 40% / 0);
+    --game-highlight-color-3: hsl(100deg 100% 37.5%);
+
+    --bs-font-sans-serif: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-body-bg: #111;
+    --bs-emphasis-color: #fff;
+    --bs-emphasis-color-rgb: 255, 255, 255;
+    --bs-border-radius: 1.25rem;
+    --bs-border-color: rgba(255,255,255,0.25);
+    --bs-link-color-rgb: 68, 204, 0;
+    --bs-link-hover-color-rgb: 85, 255, 0;
+}
+
+html {
+    background-color: var(--game-identity-color);
+}
+
+.btn-primary {
+    --bs-btn-color: #000;
+    --bs-btn-bg: var(--game-highlight-color-1);
+    --bs-btn-border-color: var(--game-highlight-color-1);
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: var(--game-highlight-color-2);
+    --bs-btn-hover-border-color: var(--game-highlight-color-2);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: var(--game-highlight-color-3);
+    --bs-btn-active-border-color: var(--game-highlight-color-3);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--game-highlight-color-1);
+    --bs-btn-disabled-border-color: var(--game-highlight-color-1);
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+legend {
+    margin-bottom: 24px;
+}
+
+.h1, h1 {
+    font-size: calc(1.75rem + 2vw);
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+
+.h2, h2 {
+    font-weight: 900;
+    margin-bottom: 24px;
+    color: var(--game-highlight-color-2);
+}
+
+.form-check-input {
+    --bs-form-check-bg: var(--game-identity-color);
+}
+
+@media (min-width: 1200px) {
+    .h1, h1 {
+        font-size: 4rem;
+        margin-bottom: 32px;
+    }
+}
+
+.game-screen {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.game-screen.active {
+    display: flex;
+}
+
+#navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#openingScreen {
+    background-color: var(--game-identity-color);
+    min-height: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    /* position: relative; */
+    z-index: 0;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: absolute;
+}
+
+.opening-content__heading {
+    color: var(--game-highlight-color-2);
+    font-weight: 900;
+}
+
+#openingScreen .btn {
+    margin-top: 24px;
+}
+
+#openingScreen .logos {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+    margin-top: 32px;
+    padding-top: 32px;
+    padding-bottom: 20px;
+    border-top: 1px solid var(--bs-border-color);
+}
+
+#openingScreen .logos img {
+    height: 40px;
+    display: block;
+    margin-bottom: 0;
+    width: auto;
+}
+
+#openingScreen .logos .logo-row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 32px;
+}
+
+.opening-bg {
+    min-height: 50vh;
+    max-height: 50vw;
+    position: sticky;
+    top: 12px;
+}
+
+.opening-bg img, .opening-bg video {
+    width: 100%;
+    height: calc(100vh - 24px);
+    min-height: 50vh;
+    max-height: 50vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
+    border: 12px solid var(--bs-border-color);
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .opening-content {
+        margin-top: 16px
+    }
+}
+
+@media (min-width: 992px) {
+    #openingScreen {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    .opening-bg, .opening-bg img, .opening-bg video {
+        height: 50vw;
+        max-height: calc(100vh - 64px);
+    }
+    .opening-bg img, .opening-bg video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+#surveyScreen {
+    background-color: var(--game-identity-color);
+    min-height: 100%;
+    padding-top: 80px;
+    padding-bottom: 64px;
+    /* position: relative; */
+    z-index: 0;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#surveyContainer {
+    text-align: center;
+}
+
+#surveySubmitButton {
+    margin-top: 16px;
+}
+
+.survey-field {
+    margin-bottom: 32px;
+}
+
+#instructionsScreen {
+    background-color: var(--game-identity-color);
+    min-height: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    /* position: relative; */
+    z-index: 0;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: absolute;
+}
+
+#loadingScreen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#loadingScreen::before {
+    content: "";
+    background-color: var(--game-identity-color);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.9;
+    z-index: 0;
+}
+
+#loadingScreen * {
+    position: relative;
+    z-index: 1;
+}
+
+#loadingScreen .loading-screen-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+#loadingScreen .loading-screen-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: relative;
+}
+  
+#loadingScreen .loading-screen-icon::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        var(--game-highlight-color-2) 0%,
+        var(--game-highlight-color-2-transparent) 100%
+    );
+    mask: radial-gradient(farthest-side, transparent calc(100% - 5px), black calc(100% - 4px));
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+      transform: rotate(0deg);
+    }
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+
+#loadingScreen p {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+#searchImagesCanvas {
+    cursor: pointer;
+    background-color: var(--game-identity-color);
+    border-radius: 8px;
+    max-height: 50vw;
+    width: 100%;
+    height: 60vh;
+}
+
+#gameplayScreen {
+    background-color: #000;
+    min-height: 100%;
+    /* position: relative; */
+    z-index: 2;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#gameCanvas {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#slideCounter {
+    height: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: 4px;
+}
+
+#slideCounter .marker {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-top: 8px;
+    height: calc(100% - 8px);
+    display: block;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.15);
+    position: relative;
+}
+
+#slideCounter .marker::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(255,255,255,0.5);
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@keyframes scaleXAnimation {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+#slideCounter .marker.active::after {
+    animation: scaleXAnimation var(--slide-duration) linear forwards;
+}
+
+#slideCounter .marker.active ~ .marker::after {
+    transform: scaleX(0);
+}
+
+#resultsScreen {
+    background-color: var(--game-identity-color);
+    min-height: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    /* position: relative; */
+    z-index: 0;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: absolute;
+}
+
+#mainResult {
+    color: var(--game-highlight-color-2);
+    font-weight: 900;
+}
+
+.result-item {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    padding-top: 16px;
+    border-top: 1px solid var(--game-highlight-color-3);
+    gap: 16px;
+    align-items: center;
+}
+
+.result-item__figure {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    /* border: 1px solid var(--bs-border-color); */
+    flex-shrink: 0;
+    align-self: flex-start;
+    /* background-color: var(--game-highlight-color-3); */
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.result-item__figure img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.results-footer {
+    margin-top: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 16px;
+}
+
+.results-footer p {
+    border-right: 1px solid rgba(255,255,255,0.5);
+    padding-right: 16px;
+}
+
+.results-footer p:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+
+#backToStartButton {
+    margin-bottom: 32px;
+}
+
+#gameStats {
+    /* background-color: rgba(255, 255, 255, 0.75) !important; */
+}
+
+#gameStats li, #gameStats p {
+    font-size: 21px;
+}
+
+.form-radio-button-check {
+    display: inline-block;
+    margin-right: 16px;
+    position: relative;
+    width: fit-content;
+    padding-left: 0;
+}
+
+.form-check-input[type=radio].radio-button {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 20px;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-image: none;
+    float: unset;
+    margin-left: 0;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+.form-check-input[type=radio].radio-button:focus {
+    border-color: var(--game-highlight-color-2);
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(85, 255, 03, .15);
+}
+
+.form-radio-button-check .form-check-label {
+    z-index: 1;
+    position: relative;
+    line-height: 24px;
+    width: 100%;
+    padding: 8px 24px;
+    pointer-events: none;
+    display: inline-block;
+}
+
+.form-check-input[type=radio].radio-button:checked + label {
+    color: black;
+}
+
+.form-check-input:checked {
+    background-color: var(--game-highlight-color-2);
+    border-color: var(--game-highlight-color-2);
+}
+
+.modal {
+    --bs-modal-bg: var(--game-identity-color);
+}
+
+.modal-content p,
+.modal-content li {
+    width: 100%;
+}

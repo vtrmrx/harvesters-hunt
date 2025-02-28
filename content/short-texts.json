@@ -1,0 +1,51 @@
+{
+    "gameLangs": {
+        "pt": "Português brasileiro",
+        "en": "English"
+    },
+    "gameTitle": {
+        "pt": "Procura-se: opiliões",
+        "en": "Wanted: harvesters"
+    },
+    "openingHeading": {
+        "pt": "Procura-se: você viu este aracnídeo?",
+        "en": "Have you seen this arachnid?"
+    },
+    "openingIntro": {
+        "pt": "<p>Opiliões são aracnídeos discretos, que se movem lentamente e, ao contrário das aranhas, não possuem glândulas de veneno, mas emitem um cheiro ruim. Muitas espécies são marrons, mas algumas possuem cores variadas.</p><p>Estamos interessados em saber se esses diferentes padrões de coloração influenciam a detecção de opiliões por predadores em dois habitats diferentes. Para responder a isso, estamos utilizando um jogo online, no qual humanos jogam como predadores.</p>",
+        "en": "<p>Harvesters are discreet arachnids that move slowly, and unlike spiders, they don't have venom glands, but they produce a bad smell. Many species have a brownish coloration, but some have varying patterns.</p><p>We are interested to know if these different color patterns influence harvesters detection in two different habitats. To answer this, we are using an online game, in which humans play as predators.</p>",
+        "es": "<p>Harvesters are discreet arachnids that move slowly, and unlike spiders, they don't have venom glands, but they produce a bad smell. Many species have a brownish coloration, but some have varying patterns.</p><p>We are interested to know if these different color patterns influence harvesters detection in two different habitats. To answer this, we are using an online game, in which humans play as predators.</p>"
+    },
+    "goToGameButton": {
+        "pt": "Ir para jogo",
+        "en": "Go to game"
+    },
+    "surveySubmitButton": {
+        "pt": "Começar jogo",
+        "en": "Start game"
+    },
+    "learnMoreButton": {
+        "pt": "Saiba mais",
+        "en": "Learn more"
+    },
+    "userConsentButton": {
+        "pt": "Concordo",
+        "en": "I agree"
+    },
+    "startGameInteraction": {
+        "pt": "Clique em qualquer opilião para começar o jogo.",
+        "en": "Click any harvester to start the game."
+    },
+    "modalFooter": {
+        "pt": "<p>Ao clicar em “Concordo”, você concorda que seus dados de clique e dados da tela do dispositivo (como dimensões e orientação da tela) sejam usados para nossa pesquisa. Nenhum dado de identificação pessoal será coletado e você pode sair do jogo a qualquer momento.</p>",
+        "en": "<p>By clicking “I agree” you're consenting to your click-data and device screen data (such as screen dimensions and orientation) being used for our research. No personal identifying data will be collected, and you're free to stop at any time.</p>"
+    },
+    "backToStartButton": {
+        "pt": "Voltar ao início",
+        "en": "Back to start"
+    },
+    "loadingText": {
+        "pt": "Carregando",
+        "en": "Loading"
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overall game stats</title>
+</head>
+<body>
+    <h1>Overall game stats</h1>
+    <div id="rowCounts"></div>
+
+    <script>
+        async function loadCSV(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const text = await response.text();
+                const rows = text.split('\n').filter(row => row.trim() !== '');
+                return rows.length - 1; // subtract 1 for header row
+            } catch (error) {
+                return `Error: ${error.message}`;
+            }
+        }
+
+        async function loadAllCSVs(urls) {
+            const rowCountsDiv = document.getElementById('rowCounts');
+            rowCountsDiv.innerHTML = ''; // Clear previous content
+            for (const url of urls) {
+                const rowCount = await loadCSV(url);
+                const p = document.createElement('p');
+                p.textContent = `URL: ${url}, Number of rows: ${rowCount}`;
+                rowCountsDiv.appendChild(p);
+            }
+        }
+
+        // Array of URLs for the CSV files
+        const csvUrls = [
+            './data/output/survey.csv',
+            './data/output/session.csv',
+            './data/output/results.csv',
+            './data/output/events.csv',
+            './data/output/search-images.csv'
+        ];
+
+        loadAllCSVs(csvUrls);
+    </script>
+</body>
+</html>
