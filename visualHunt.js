@@ -1,3 +1,16 @@
+/*  
+  JavaScript library for creating interactive games that collect user input  
+  as a proxy for visually oriented predators' hunting behavior.
+
+  Originally developed for use in "Harvesters hunt" game, by Nathalia Ximenes,
+  available at https://www.visual-ecology.com/harvesters
+
+  Inspired by the Exeter Visual Ecology Research Group's games,  
+  available at https://www.visual-ecology.com/games/.  
+
+  Author: Vítor Marques de Faria (https://github.com/vtrmrx)  
+*/
+
 class VisualHunt {
     
     constructor(config) {
